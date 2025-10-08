@@ -1,0 +1,5 @@
+# training artifacts (do not version)
+Data/checkpoints/*/events.out.tfevents.*
+Data/checkpoints/*/outputs/**
+Data/checkpoints/*/metrics_*.pth
+Data/checkpoints/*/best_metrics_valid.txt
