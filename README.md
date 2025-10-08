@@ -4,8 +4,9 @@ From WASPAA 2025 Paper: Scene-wide Acoustic Parameter Estimation
 
 Authors:
 Ricardo Falcon-Perez¹, Ruohan Gao², Gregor Mueckl, Sebastia V. Amengual Gari³, Ishwarya Ananthabhotla³
+<br>
 ¹ Aalto University, Finland
-² University of Maryland, College PArk
+² University of Maryland, College Park
 ³ Meta - Reality Labs Research, USA
 
 ### Citation
@@ -26,9 +27,9 @@ This is the official repository for the WASPAA 2025 paper Scene-wide Acoustic Pa
 We also include the **Multi-room Apartments Simulation** (MRAS) dataset. This is a large scale synthetic dataset that models indoor scenes by connecting multiple rooms.
 For more details of the dataset please refer to the paper.
 
-This repo contains:
-- Pre trained model
-- Code (training, inference, dataset preprocessing) [**coming soon**]
+This repo contains: 
+- Pre trained model  [**coming soon**]
+- Code (training, inference, dataset preprocessing) [**needs debugging**]
 - MRAS Dataset
     - Raw [**coming soon**]
         - Scene geometries
