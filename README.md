@@ -1,4 +1,4 @@
-# Scene-wide Acosutic Parameter Estimation
+# Scene-wide Acoustic Parameter Estimation
 
 From WASPAA 2025 Paper: Scene-wide Acoustic Parameter Estimation
 
@@ -23,7 +23,7 @@ If you use the model, code, or the MRAS dataset please cite this work as:
 
 
 ## Overview
-This is the official repository for the WASPAA 2025 paper Scene-wide Acoustic Parameter Estimation. The goal of this project is to predict heatmaps of acoustic parameters covering the full scene for a particualar source in a single inference step. 
+This is the official repository for the WASPAA 2025 paper Scene-wide Acoustic Parameter Estimation. The goal of this project is to predict heatmaps of acoustic parameters covering the full scene given a particular source in a single inference step. 
 We also include the **Multi-room Apartments Simulation** (MRAS) dataset. This is a large scale synthetic dataset that models indoor scenes by connecting multiple rooms.
 For more details of the dataset please refer to the paper.
 
