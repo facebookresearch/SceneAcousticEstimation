@@ -29,7 +29,7 @@ For more details of the dataset please refer to the paper.
 
 This repo contains: 
 - Pre trained model  [**coming soon**]
-- Code (training, inference, dataset preprocessing) [**needs debugging**]
+- Code (training, inference, dataset preprocessing)
 - MRAS Dataset
     - Raw [**coming soon**]
         - Scene geometries
