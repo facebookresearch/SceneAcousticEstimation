@@ -29,14 +29,16 @@ For more details of the dataset please refer to the paper.
 
 This repo contains: 
 - Pre trained model  [**coming soon**]
-- Code (training, inference, dataset preprocessing) [**needs debugging**]
+- Code (training, inference, dataset preprocessing)
 - MRAS Dataset
     - Raw [**coming soon**]
         - Scene geometries
-        - 2nd order ambisonid rirs
-    - Preprocessed
+        - 2nd order ambisonic rirs
+        - Acoustic parameters and other metadata
+    - Preprocessed (packed as LMDB)
         - Scene floormaps
-        - RIRs packed as LMDB
+        - Acoustic heatmaps
+        - RIRs
 
 
 ***
