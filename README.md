@@ -141,7 +141,7 @@ Trainign with Replica
     --rir_output_channels 0
 ```
 
-###Key flags & expected files
+### Key flags & expected files
 ```python
 --read_lmdb --fname_lmdb:
     rirs_mono_mras_grids.lmdb (MRAS RIRs)
@@ -152,7 +152,7 @@ Trainign with Replica
     replica_relcenter_10x10_moreparams.lmdb (Replica maps)
 
 Output channels: --rir_output_channels 0 (mono)
-``
+```
 
 Inference only:
 ```bash    
@@ -160,7 +160,7 @@ python train_basic.py -c configs/train_more_parameters.yaml --exp_name $exp_n --
     --validation_checkpoint 7033621_3_table01_1111_10x10_moreparams_replica_triton_replica_balanced_4 --do_validation \
     --dataset 'replica' --fold 'balanced_4' --n_files_per_scene 10000000 --max_length 24000 --use_augmentation_getitem \
     --read_lmdb --fname_lmdb 'rirs_mono_scenes_18.lmdb' --read_lmdb_maps --fname_lmdb_maps 'replica_relcenter_10x10_moreparams.lmdb' --rir_output_channels 0 \
-````
+```
 
 ```bash
 python train_basic.py -c configs/mras_more_parameters.yaml --exp_name $exp_n --use_triton  --job_id $job_id --task_id $param  --num_workers $num_w --seed 1111 \
