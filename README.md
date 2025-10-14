@@ -29,7 +29,7 @@ For more details of the dataset please refer to the paper.
 
 This repo contains: 
 - Pre trained model  [**coming soon**]
-- Code (training, inference, dataset preprocessing)
+- Code (training, inference, dataset preprocessing) [**needs debugging**]
 - MRAS Dataset
     - Raw [**coming soon**]
         - Scene geometries
@@ -39,6 +39,29 @@ This repo contains:
         - RIRs packed as LMDB
 
 
+***
+## Data
+This repo includes the preprocessed MRAS/Replica data (via Git LFS) as ZIP files and expects the following layout:
+```bash
+Data/
+  preprocessed/         # LMDBs as zip files (tracked with Git LFS)
+    mras_relfloor_10x10_moreparams.lmdb.zip
+    replica_relcenter_10x10_moreparams.lmdb.zip
+    rirs_mono_mras_grids.lmdb.zip
+    rirs_mono_scenes_18.lmdb.zip
+  raw/                  # Raw data (not yet included)
+```
+### Getting the data
+Install and pull LFS content:
+```bash
+git lfs install
+git lfs pull
+```
+Unzip LMDB archives in place:
+```bash
+unzip Data/preprocessed/*.zip -d Data/preprocessed/
+```
+<b>Note on raw data:<b> Data/raw/ is reserved for the raw MRAS assets (scene geometries, ambisonic RIRs, etc.) and is not included yet.
 
 
 ## Prerequisites
@@ -89,10 +112,62 @@ git sub update decayfitnet
 ```
 
 
+## Training: Reproducing the Main Experiments
 
+The paths/filenames below assume you’ve unzipped LMDBs into Data/preprocessed/.
 
+Training with MRAS:
+```
+  python train_basic.py -c configs/train_more_parameters.yaml \
+    --exp_name $exp_n --use_triton --job_id $job_id --task_id $param \
+    --num_workers $num_w --seed 1111 \
+    --dataset 'mras' --fold 'fixed_1' \
+    --n_files_per_scene 10000000 --max_length 24000 --use_augmentation_getitem \
+    --fmap_use_soft_sources \
+    --read_lmdb --fname_lmdb 'rirs_mono_mras_grids.lmdb' \
+    --read_lmdb_maps --fname_lmdb_maps 'mras_relfloor_10x10_moreparams.lmdb' \
+    --rir_output_channels 0
+```
 
+Trainign with Replica
+```bash
+  python train_basic.py -c configs/mras_more_parameters.yaml \
+    --exp_name $exp_n --use_triton --job_id $job_id --task_id $param \
+    --num_workers $num_w --seed 1111 \
+    --dataset 'replica' --fold 'balanced_1' \
+    --n_files_per_scene 10000000 --max_length 24000 --use_augmentation_getitem \
+    --read_lmdb --fname_lmdb 'rirs_mono_scenes_18.lmdb' \
+    --read_lmdb_maps --fname_lmdb_maps 'replica_relcenter_10x10_moreparams.lmdb' \
+    --rir_output_channels 0
+```
 
+###Key flags & expected files
+```python
+--read_lmdb --fname_lmdb:
+    rirs_mono_mras_grids.lmdb (MRAS RIRs)
+    rirs_mono_scenes_18.lmdb (Replica RIRs)
+
+--read_lmdb_maps --fname_lmdb_maps:
+    mras_relfloor_10x10_moreparams.lmdb (MRAS maps)
+    replica_relcenter_10x10_moreparams.lmdb (Replica maps)
+
+Output channels: --rir_output_channels 0 (mono)
+``
+
+Inference only:
+```bash    
+python train_basic.py -c configs/train_more_parameters.yaml --exp_name $exp_n --use_triton  --job_id $job_id --task_id $param  --num_workers $num_w --seed 1111 \
+    --validation_checkpoint 7033621_3_table01_1111_10x10_moreparams_replica_triton_replica_balanced_4 --do_validation \
+    --dataset 'replica' --fold 'balanced_4' --n_files_per_scene 10000000 --max_length 24000 --use_augmentation_getitem \
+    --read_lmdb --fname_lmdb 'rirs_mono_scenes_18.lmdb' --read_lmdb_maps --fname_lmdb_maps 'replica_relcenter_10x10_moreparams.lmdb' --rir_output_channels 0 \
+````
+
+```bash
+python train_basic.py -c configs/mras_more_parameters.yaml --exp_name $exp_n --use_triton  --job_id $job_id --task_id $param  --num_workers $num_w --seed 1111 \
+    --validation_checkpoint 7046468_0_mras_1111_10x10_moreparams_June15_triton_mras_fixed_1 --do_validation \
+    --dataset 'mras' --fold 'fixed_1' --n_files_per_scene 10000000 --max_length 24000 --use_augmentation_getitem --fmap_use_soft_sources \
+    --read_lmdb --fname_lmdb 'rirs_mono_mras_grids.lmdb' --read_lmdb_maps --fname_lmdb_maps 'mras_relfloor_10x10_moreparams.lmdb' --rir_output_channels 0 \
+```
 ---
 
 ## 📄 License
