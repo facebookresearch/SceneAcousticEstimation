@@ -131,7 +131,7 @@ Training with MRAS:
     --rir_output_channels 0
 ```
 
-Trainign with Replica
+Training with Replica
 ```bash
   python train_basic.py -c configs/mras_more_parameters.yaml \
     --exp_name $exp_n --use_triton --job_id $job_id --task_id $param \
