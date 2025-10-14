@@ -14,7 +14,7 @@ If you use the model, code, or the MRAS dataset please cite this work as:
 
 ```bibtex
 @inproceedings{falconperez2025,
-    author  = "{Falcón Pérez}, Ricardo and Gao, Ruohan and Mueckl, Gregor, and {Amengual Gari}, Sebastiva V. and Ananthabhotla, Ishwarya",
+    author  = "{Falcón Pérez}, Ricardo and Gao, Ruohan and Mueckl, Gregor, and {Amengual Gari}, Sebastia V. and Ananthabhotla, Ishwarya",
     year    = {2025},
     title   = {Scene Wide Acoustic Parameter Estimation},
     booktitle   = {IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA)},
@@ -28,7 +28,7 @@ We also include the **Multi-room Apartments Simulation** (MRAS) dataset. This is
 For more details of the dataset please refer to the paper.
 
 This repo contains: 
-- Pre trained model  [**coming soon**]
+- Pre trained model  
 - Code (training, inference, dataset preprocessing)
 - MRAS Dataset
     - Raw [**coming soon**]
