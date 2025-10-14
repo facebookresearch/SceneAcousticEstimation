@@ -63,7 +63,7 @@ Unzip LMDB archives in place:
 ```bash
 unzip Data/preprocessed/*.zip -d Data/preprocessed/
 ```
-<b>Note on raw data:<b> Data/raw/ is reserved for the raw MRAS assets (scene geometries, ambisonic RIRs, etc.) and is not included yet.
+<b>Note on raw data:</b> Data/raw/ is reserved for the raw MRAS assets (scene geometries, ambisonic RIRs, etc.) and is not included yet.
 
 
 ## Prerequisites
