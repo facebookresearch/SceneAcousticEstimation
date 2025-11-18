@@ -25,3 +25,12 @@ rirs_mono_mras_grids.lmdb_part_.gz15 filter=lfs diff=lfs merge=lfs -text
 rirs_mono_mras_grids.lmdb_part_.gz24 filter=lfs diff=lfs merge=lfs -text
 rirs_mono_mras_grids.lmdb_part_.gz06 filter=lfs diff=lfs merge=lfs -text
 rirs_mono_mras_grids.lmdb_part_.gz23 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz03 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz04 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz05 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz01 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz02 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz06 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz07 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz08 filter=lfs diff=lfs merge=lfs -text
+rirs_mono_scenes_18.lmdb_part_.gz09 filter=lfs diff=lfs merge=lfs -text
