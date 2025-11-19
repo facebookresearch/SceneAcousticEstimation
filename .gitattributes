@@ -1,2 +1,6 @@
 Data/bigfile.bin filter=lfs diff=lfs merge=lfs -text
 *.pth filter=lfs diff=lfs merge=lfs -text
+Data/preprocessed/acoustic_parameters/* filter=lfs diff=lfs merge=lfs -text
+Data/preprocessed/acoustic_parameters/replica/*.json filter=lfs diff=lfs merge=lfs -text
+Data/preprocessed/acoustic_parameters/mras/*.json filter=lfs diff=lfs merge=lfs -text
+Data/preprocessed/acoustic_parameters/**/*.json filter=lfs diff=lfs merge=lfs -text
