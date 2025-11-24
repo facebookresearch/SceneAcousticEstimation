@@ -6,3 +6,4 @@ Data/preprocessed/acoustic_parameters/mras/*.json filter=lfs diff=lfs merge=lfs 
 Data/preprocessed/acoustic_parameters/**/*.json filter=lfs diff=lfs merge=lfs -text
 Data/preprocessed/rirs/rirs_mono_mras_lines.lmdb_part_.gz* filter=lfs diff=lfs merge=lfs -text
 Data/preprocessed/rirs/rirs_mono_mras_grids.lmdb_part_.gz* filter=lfs diff=lfs merge=lfs -text
+Data/preprocessed/maps/replica_relcenter_10x10_moreparams.lmdb_part_.gz* filter=lfs diff=lfs merge=lfs -text
